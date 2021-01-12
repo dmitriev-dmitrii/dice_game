@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice game</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <div class="grid-container">
+
+    <div class="dice1__wrapper">
+        <div class="dice1">
+          <div class="dice__side">1</div>
+          <div class="dice__side">2</div>
+          <div class="dice__side">3</div>
+          <div class="dice__side">4</div>  
+          <div class="dice__side">5</div>
+          <div class="dice__side">6</div>
+        </div>
+
+
+    </div>
+    <div class="dice2__wrapper">
+      <div class="dice2">
+        <div class="dice__side">1</div>
+        <div class="dice__side">2</div>
+        <div class="dice__side">3</div>
+        <div class="dice__side">4</div>  
+        <div class="dice__side">5</div>
+        <div class="dice__side">6</div>
+      </div>
+    </div>
+
+    <div class="menu">
+
+      <button id="new__game" class="button">Начать новую игру</button>
+      <button id="save__game" class="button">Сохранить игру</button>
+      <button id="resume__game" class="button" >Продолжить  игру</button> 
+
+    </div>
+
+    <div class="player__card player1">
+<span>игрок 1: </span>
+      <div class="player1__name"></div>
+      <div class="player1__score"> </div>
+    </div>
+
+    <div class="player__card player2">
+      <span>игрок 2: </span>
+      <div class="player2__name"></div>
+      <div class="player2__score"></div>
+    </div>
+
+    <div class="score">
+  
+<div class="player1__raund-score"></div>
+<div class="player2__raund-score"></div>
+
+</div>
+
+
+<div class="who-choice">
+  <div class="who-choice__message"></div>
+  <button disabled="true" class="button roll-dice__btn">Сделать ход</button>
+</div>
+    <div class="comments">
+
+    </div>
+
+  </div>
+  
+</body>
+</html>

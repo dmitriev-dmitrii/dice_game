@@ -1,0 +1,274 @@
+
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr  ;
+	grid-template-rows: 0fr 0fr auto 0fr 0fr auto;
+	gap: 0.5em;
+	// grid-template-areas:
+	// 	"score score who-choice who-choice menu"
+	// 	"dice1__wrapper dice1__wrapper dice2__wrapper dice2__wrapper player1"
+	// 	"dice1__wrapper dice1__wrapper dice2__wrapper dice2__wrapper player2"
+	// 	"comments comments comments comments comments ";
+
+		grid-template-areas:
+		"score   score    "
+		" player1 player2 "
+		"dice1__wrapper  dice2__wrapper  "
+		"comments comments "
+		"  who-choice menu"
+		;
+
+	max-width: 1400px;
+	min-height: 100vh;
+	margin: 0 auto;
+
+}
+
+.dice1__wrapper {
+	grid-area: dice1__wrapper;
+}
+
+.dice2__wrapper {
+	grid-area: dice2__wrapper;
+}
+
+.menu {
+	grid-area: menu;
+}
+
+.player1 {
+	grid-area: player1;
+}
+
+.player2 {
+	grid-area: player2;
+}
+
+.comments {
+	grid-area: comments;
+}
+
+.score {
+	grid-area: score;
+}
+
+.who-choice {
+	grid-area: who-choice;
+}
+
+body,
+html {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	box-sizing: border-box;
+	padding: 0 0.5em;
+	margin: 0;
+	background-color: #111;
+	color: white;
+	overflow: hidden;
+	font-size: 12px;
+}
+
+
+.dice1__wrapper,
+.dice2__wrapper,
+.menu,
+.player1,
+.player2,
+.score,
+.comments,
+.who-choice {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+
+
+.button {
+	margin: 1em;
+	padding: 0.7em 1em 0.7em 1.3em ;
+	letter-spacing: -0.2px;
+	// min-width: 50%;
+
+	outline: none;
+	font-weight: bold;
+	border-radius: 8px;
+	border-top-left-radius: 27px;
+	color: black;
+	align-self:flex-end;
+	cursor: pointer;
+	transition: all 0.3s linear;
+	background: #ffc800;
+
+	border: 1.5px solid #ffffff;
+	box-sizing: border-box;
+	&:hover	
+	{
+		box-shadow: #ffc800 0 0 7px 3px;
+	}
+
+	&:disabled {
+		cursor: default;
+		background-color: grey;
+		color: rgba(0, 0, 0, 0.7);
+
+
+		&:hover	
+		{
+			box-shadow: none;
+		}
+	}
+}
+
+.roll-dice__btn
+{
+
+	align-self:center;
+	border-radius: 8px;
+padding:  0.7em 1em;
+
+}
+.menu {
+
+}
+.player__card {
+	border-radius: 7px;
+	border: 1px solid rgba(126, 125, 125, 0.5);
+
+	padding: .5em ;
+}
+
+.player1__roll {
+}
+
+.player2 {
+}
+.player2__name,
+.player1__name {
+	font-size: 1.5em;
+	letter-spacing: 2px;
+	font-weight: bold;
+	padding: 0em;
+	letter-spacing: -0.2px;
+}
+.player2__roll {
+}
+.player2__score,
+.player1__score {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.who-choice__message {
+	font-weight: bold;
+	font-size: 1.3em;
+
+	&::before {
+		content: "Ходит игрок:";
+		font-weight: 300;
+		font-size: 1em;
+	}
+}
+
+.dice1,
+.dice2 {
+}
+
+.dice1__score {
+}
+
+.player1__raund-score,
+.player2__raund-score {
+	align-self: flex-start;
+	font-size: 1.3em;
+	margin: 1em 2em;
+	font-weight: bold;
+	&::first-letter {
+		text-transform: uppercase;
+	}
+	&::before {
+		font-weight: 300;
+		font-size: 1em;
+	}
+}
+.player1__raund-score {
+	&:before {
+		content: "игрок 1 очков раунда:";
+	}
+}
+.player2__raund-score {
+	&:before {
+		content: "игрок 2 очков раунда:";
+	}
+}
+.comments {
+	font-size: 1.5em;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+.shake
+{
+animation: shake 0.3s 2.7s;
+}
+
+@keyframes shake {
+	10%, 90% {
+		transform: translate3d(-1px, 0, 0);
+	  }
+	  
+	  20%, 80% {
+		transform: translate3d(-5px, 5px, 0);
+	  }
+	
+	  30%, 50%, 70% {
+		transform: translate3d(-5px, -5px, 0);
+	  }
+	
+	  40%, 60% {
+		transform: translate3d(4px, 4px, 0);
+	  }
+}
+
+@import "_dice.scss";
+
+
+@media (min-width: 575.98px)
+{ 
+	.grid-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 0.5fr 1.5fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		gap: 1em;
+		grid-template-areas:
+			"score score who-choice who-choice menu"
+			"dice1__wrapper dice1__wrapper dice2__wrapper dice2__wrapper player1"
+			"dice1__wrapper dice1__wrapper dice2__wrapper dice2__wrapper player2"
+			"comments comments comments comments comments ";
+	
+		max-width: 1400px;
+		height: 100vh;
+		margin: 0 auto;
+	
+	}
+
+
+	body,
+html
+{
+font-size: 16px;
+}
+.player2__name,
+.player1__name {
+	font-size: 1.5em;
+}
+.comments {
+	font-size: 1.5em;
+}
+}
+ 
+
